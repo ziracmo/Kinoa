@@ -1,4 +1,4 @@
-# Kinoa
+# Kinoa - An Magic The Gathering App 🃏
 ## Project setup and usage
 
 Install dependencies:
@@ -12,3 +12,5 @@ Run development server:
 ```
 yarn dev
 ```
+
+
