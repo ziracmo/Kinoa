@@ -4,4 +4,6 @@ declare module '*.vue' {
   export default _default
 }
 
+declare module 'mtgsdk'
+
 declare const _APP_VERSION: string

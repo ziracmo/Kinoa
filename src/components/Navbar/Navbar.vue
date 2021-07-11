@@ -3,7 +3,7 @@
         <div class="mx-auto">
             <div class="flex items-center justify-center text-gray-600 capitalize dark:text-gray-300">
                 <NavbarItem text="Home" :active="currentRoute === '/home'" route="/home" />
-                <NavbarItem text="Schedule" :active="currentRoute === '/schedule'" route="/schedule"/>
+                <NavbarItem text="Decks" :active="currentRoute === '/deck'" route="/deck"/>
                 <NavbarItem text="Favorites" :active="currentRoute === '/favorites'" route="/favorites"/>
                 <NavbarItem text="Settings" :active="currentRoute === '/settings'" route="/settings"/>
             </div>
