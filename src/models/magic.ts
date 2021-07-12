@@ -1,173 +1,116 @@
-
-  
-export enum Color {
-	White,
-	Blue,
-	Black,
-	Red,
-	Green,
-}
-export enum ColorIdentity {
-	W, U, B, R, G,
-}
-export enum Rarity {
-	"Basic Land",
-	Common,
-	Uncommon,
-	"Mythic Rare",
-	Timeshifted,
-	Masterpiece,
-}
-export enum Layout {
-	normal,
-	split,
-	flip,
-	"double-faced",
-	token,
-	plane,
-	scheme,
-	phenomenon,
-	leveler,
-	vanguard,
-}
-export enum Legality {
-	Legal,
-	Banned,
-	Restricted,
+export interface ScryfallResponse {
+    data: Card[],
+    has_more: true;
+    next_page: string;
+    object: string;
+    total_cards: number;
 }
 
-export interface BlockLegality {
-	format: string;
-	legality: keyof typeof Legality;
+export interface ImageUris {
+    small: string;
+    normal: string;
+    large: string;
+    png: string;
+    art_crop: string;
+    border_crop: string;
+}
+
+export interface Legalities {
+    standard: string;
+    future: string;
+    historic: string;
+    gladiator: string;
+    pioneer: string;
+    modern: string;
+    legacy: string;
+    pauper: string;
+    vintage: string;
+    penny: string;
+    commander: string;
+    brawl: string;
+    duel: string;
+    oldschool: string;
+    premodern: string;
+}
+
+export interface Prices {
+    usd?: any;
+    usd_foil?: any;
+    eur?: any;
+    eur_foil?: any;
+    tix: string;
+}
+
+export interface RelatedUris {
+    gatherer: string;
+    tcgplayer_infinite_articles: string;
+    tcgplayer_infinite_decks: string;
+    edhrec: string;
+    mtgtop8: string;
+}
+
+export interface PurchaseUris {
+    tcgplayer: string;
+    cardmarket: string;
+    cardhoarder: string;
 }
 
 export interface Card {
-	name: string;
-	manaCost: string;
-	cmc: number;
-	colors: (keyof typeof Color)[];
-	colorIdentity: (keyof typeof ColorIdentity)[];
-	type: string;
-	supertypes: string[];
-	types: string[];
-	subtypes: string[];
-	rarity: keyof typeof Rarity;
-	set: string;
-	setName: string;
-	artist: string;
-	flavor?: string;
-	layout: keyof typeof Layout;
-	multiverseid: number;
-	imageUrl: string;
-	variations: number[];
-	printings: string[];
-	originalText: string;
-	originalType: string;
-	legalities: BlockLegality[];
-	id: string;
-}
-export interface CreatureCard {
-	power: string;
-	toughness: string;
-}
-export interface PlaneswalkerCard {
-	loyalty: number;
-}
-
-export interface CardFilter {
-	name?: string;
-	layout?: string;
-	cmc?: number;
-	colors?: string;
-	colorIdentity?: string;
-	type?: string;
-	supertypes?: string;
-	types?: string;
-	subtypes?: string;
-	rarity?: string;
-	set?: string;
-	setName?: string;
-	text?: string;
-	flavor?: string;
-	artist?: string;
-	number?: string;
-	power?: string;
-	toughness?: string;
-	loyalty?: number;
-	foreignName?: string;
-	language?: string;
-	gameFormat?: string;
-	legality?: keyof typeof Legality;
-	page?: number;
-	pageSize?: number;
-	orderBy?: string;
-	random?: boolean;
-	contains?: string;
-}
-
-export interface PaginationFilter {
-	page?: number;
-	pageSize?: number;
-}
-
-export interface SetFilter {
-	name?: string;
-	block?: string;
-}
-
-export enum SetType {
-	core,
-	expansion,
-	reprint,
-	box,
-	un,
-	"from the vault",
-	"premium deck",
-	"duel deck",
-	starter,
-	commander,
-	planechase,
-	archenemy,
-	promo,
-	vanguard,
-	masters,
-}
-
-export enum BoosterCardType {
-	marketing,
-	land,
-	common,
-	uncommon,
-	rare,
-	"mythic rare",
-}
-
-export type Booster = (keyof typeof BoosterCardType | (keyof typeof BoosterCardType)[])[];
-
-export interface Set {
-	name: string;
-	block?: string;
-	code: string;
-	gathererCode?: string;
-	type?: string;
-	oldCode?: string;
-	magicCardsInfoCode?: string;
-	releaseDate: string;
-	border: "white" | "black" | "silver";
-	expansion: keyof typeof SetType;
-	onlineOnly?: true;
-	booster?: Booster;
-}
-
-export enum ForeignLanguage{
-	CHINESE_SIMPLIFIED = 'Chinese Simplified',
-	CHINESE_TRADITIONAL = 'Chinese Traditional',
-	FRENCH = 'French',
-	GERMAN = 'German',
-	ITALIAN = 'Italian',
-	JAPANESE = 'Japanese',
-	KOREAN = 'Korean',
-	PORTUGUESE = 'Portuguese (Brazil)',
-	RUSSIAN = 'Russian',
-	SPANISH = 'Spanish'
+    object: string;
+    id: string;
+    oracle_id: string;
+    multiverse_ids: number[];
+    mtgo_id: number;
+    mtgo_foil_id: number;
+    name: string;
+    lang: string;
+    released_at: string;
+    uri: string;
+    scryfall_uri: string;
+    layout: string;
+    highres_image: boolean;
+    image_status: string;
+    image_uris: ImageUris;
+    mana_cost: string;
+    cmc: number;
+    type_line: string;
+    oracle_text: string;
+    colors: any[];
+    color_identity: any[];
+    keywords: any[];
+    legalities: Legalities;
+    games: string[];
+    reserved: boolean;
+    foil: boolean;
+    nonfoil: boolean;
+    oversized: boolean;
+    promo: boolean;
+    reprint: boolean;
+    variation: boolean;
+    set_id: string;
+    set: string;
+    set_name: string;
+    set_type: string;
+    set_uri: string;
+    set_search_uri: string;
+    scryfall_set_uri: string;
+    rulings_uri: string;
+    prints_search_uri: string;
+    collector_number: string;
+    digital: boolean;
+    rarity: string;
+    card_back_id: string;
+    artist: string;
+    artist_ids: string[];
+    illustration_id: string;
+    border_color: string;
+    frame: string;
+    full_art: boolean;
+    textless: boolean;
+    booster: boolean;
+    story_spotlight: boolean;
+    edhrec_rank: number;
+    prices: Prices;
+    related_uris: RelatedUris;
+    purchase_uris: PurchaseUris;
 }

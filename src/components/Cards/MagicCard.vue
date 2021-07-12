@@ -1,6 +1,6 @@
 <template>
     <div class="flex justify-center">
-        <img :src="card.imageUrl" class="rounded-xl" />
+        <img :src="card.image_uris.normal" class="rounded-xl" />
     </div>
 </template>
 

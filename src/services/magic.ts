@@ -1,19 +1,19 @@
-import { Card, ForeignLanguage } from '@/models/magic';
+import { Card, ScryfallResponse } from '@/models/magic';
 
 import axios from 'axios';
 
-const url: string = 'https://api.magicthegathering.io/v1/';
+const baseUrl: string = 'https://api.scryfall.com/';
 export default {
-    async getAllCards(): Promise<Card[]> {
-        const res = await axios.get(url + 'cards');
-        return res.data.cards;
-    },
-    async getCardById(id: string): Promise<Card> {
-        const res = await axios.get(url + 'card/' + id);
+    async search(search: string): Promise<ScryfallResponse[]> {
+        const res = await axios.get(baseUrl + 'cards/search?q=' + search);
         return res.data;
     },
-    async getCardByForeignLanguage(name: string, language: ForeignLanguage) {
-        const res = await axios.get(url + 'cards');
-        return res.data.cards;
+    async getRandomCard(): Promise<Card> {
+        const res = await axios.get(baseUrl + 'cards/random');
+        return res.data;
+    },
+    async getAllFunnyCards(): Promise<ScryfallResponse> {
+        const res = await axios.get(baseUrl + 'cards/search?q=is:funny');
+        return res.data;
     }
 };
