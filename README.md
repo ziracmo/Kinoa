@@ -9,7 +9,7 @@ An application for the famous card game, Magic the Gathering. Made with :
  
 Using the API of https://scryfall.com/ to get the cards informations ! 
 
-## Project setup and usage 🔨
+## 🔨 Project setup and usage 
 
 Install dependencies:
 
@@ -23,6 +23,6 @@ Run development server:
 yarn dev
 ```
 
-## Author(s) 🧑‍🦰
+## 🧑‍🦰 Author(s) 
 
 Roussange Alexandre
