@@ -1,7 +1,10 @@
 <template>
-    <div class="p-4 grid gap-4 grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6" v-if="cards.length">
-        <MagicCard v-for="card in cards" :card="card" v-bind:key="card.id"/>
-    </div>
+    <section
+        class="p-4 grid gap-4 grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+        v-if="cards.length"
+    >
+        <MagicCard v-for="card in cards" :card="card" v-bind:key="card.id" />
+    </section>
 </template>
 
 <script lang="ts">
@@ -12,11 +15,7 @@ import { defineComponent } from 'vue';
 import { Card } from '@/models/magic';
 
 type Data = {
-    cards: Card[]
-}
-
-const data: Data = {
-    cards: [],
+    cards: Card[];
 };
 
 export default defineComponent({
@@ -24,10 +23,12 @@ export default defineComponent({
         MagicCard,
     },
     data: () => {
-        return data;
+        return {
+            cards: [],
+        } as Data;
     },
     async mounted() {
-        const res = await MagicService.getAllFunnyCards();
+        const res = await MagicService.getCardFromArena();
         this.cards = res.data;
     },
 });
