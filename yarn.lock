@@ -113,6 +113,11 @@
     "lodash" "^4.17.19"
     "to-fast-properties" "^2.0.0"
 
+"@coreui/coreui@^4.0.1":
+  "integrity" "sha512-1mrWnbqoWb7+8ZAMUdlWt0AqVzDEkJglk7F3OaFsQtxienezFvlMNsd1YPPNo+taRzF7HZ8xSDIAItCvlOaMVg=="
+  "resolved" "https://registry.npmjs.org/@coreui/coreui/-/coreui-4.0.1.tgz"
+  "version" "4.0.1"
+
 "@eslint/eslintrc@^0.4.2":
   "integrity" "sha512-8nmGq/4ycLpIwzvhI4tNDmQztZ8sp+hI7cyG8i1nQDhkAbRzHpXPidRAHlNvCZQpJTKw5ItIpMw9RSToGF00mg=="
   "resolved" "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-0.4.2.tgz"
@@ -230,6 +235,11 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
+
+"@popperjs/core@^2.9.2":
+  "integrity" "sha512-VZMYa7+fXHdwIq1TDhSXoVmSPEGM/aa+6Aiq3nVVJ9bXr24zScr+NlKFKC3iPljA7ho/GAZr+d2jOf5GIRC30Q=="
+  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.9.2.tgz"
+  "version" "2.9.2"
 
 "@sentry/core@5.30.0":
   "integrity" "sha512-TmfrII8w1PQZSZgPpUESqjB+jC6MvZJZdLtE/0hZ+SrnKhW3x5WlYLvTXZpcWePYBku7rl2wn1RZu6uT0qCTeg=="
@@ -1523,6 +1533,11 @@
   "resolved" "https://registry.npmjs.org/hash-sum/-/hash-sum-2.0.0.tgz"
   "version" "2.0.0"
 
+"heroicons-vue3@^1.0.1":
+  "integrity" "sha512-oSHUq5Nm/ADuBR9c0stAjqsyV9mgsHMX+HUwCU0YsbFqgr/IEi9JyUvGYtJeXrnUyGiFeVPCZ7hTEjde8Y25NQ=="
+  "resolved" "https://registry.npmjs.org/heroicons-vue3/-/heroicons-vue3-1.0.1.tgz"
+  "version" "1.0.1"
+
 "highlight.js@^10.7.1":
   "integrity" "sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A=="
   "resolved" "https://registry.npmjs.org/highlight.js/-/highlight.js-10.7.3.tgz"
@@ -2579,7 +2594,7 @@
   dependencies:
     "@vue/devtools-api" "^6.0.0-beta.14"
 
-"vue@^3.0.0", "vue@~3.1", "vue@3.1.4":
+"vue@^3.0.0", "vue@>= 3", "vue@~3.1", "vue@3.1.4":
   "integrity" "sha512-p8dcdyeCgmaAiZsbLyDkmOLcFGZb/jEVdCLW65V68LRCXTNX8jKsgah2F7OZ/v/Ai2V0Fb1MNO0vz/GFqsPVMA=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-3.1.4.tgz"
   "version" "3.1.4"

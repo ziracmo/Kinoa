@@ -7,7 +7,9 @@
     "start": "yarn dev & wait-on tcp:3000 -v"
   },
   "dependencies": {
+    "@coreui/coreui": "^4.0.1",
     "axios": "^0.21.1",
+    "heroicons-vue3": "^1.0.1",
     "vue": "~3.1",
     "vue-router": "^4.0.10"
   },

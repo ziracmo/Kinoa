@@ -23,7 +23,20 @@ const MagicService = {
     async getCardFromArena() {
         const res = await axios.get(baseUrl + 'cards/search?q=game:arena');
         return res.data;
-    }
+    },
+    async getCardsFromString(name: string): Promise<ScryfallResponse> {
+        if (name.length && name.length >= 3) {
+            const res = await axios.get(baseUrl + 'cards/search?order=name&q=' + name);
+            return res.data;
+        }
+        return {
+            data: [],
+        };
+    },
+    async autocompleteCardName(name: string): Promise<string[]> {
+        const res = await axios.get('https://api.scryfall.com/cards/autocomplete?q=' + name);
+        return res.data;
+    },
 };
 
 export default MagicService;

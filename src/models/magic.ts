@@ -1,9 +1,9 @@
 export interface ScryfallResponse {
     data: Card[],
-    has_more: true;
-    next_page: string;
-    object: string;
-    total_cards: number;
+    has_more?: true;
+    next_page?: string;
+    object?: string;
+    total_cards?: number;
 }
 
 export interface ImageUris {
