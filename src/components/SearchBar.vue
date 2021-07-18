@@ -1,29 +1,25 @@
 <template>
-    <div class="relative mx-auto text-gray-600">
+    <div class="flex flex-row mx-auto text-gray-600">
         <input
             class="
                 w-full
-                border-2 border-green-700
                 bg-transparent
                 h-12
                 px-5
-                pr-16
-                rounded-lg
                 text-sm
+                border
+                border-gray-500
                 focus:outline-none
+                text-white
+                
             "
-            type="search"
             name="search"
             v-on:keyup.enter="emitQuery()"
             v-model="searchQuery"
             placeholder="Search as card..."
         />
-        <button
-            type="submit"
-            class="absolute right-0 top-0 px-4 h-full bg-green-700 rounded-r-lg"
-            v-on:click="emitQuery()"
-        >
-            <SearchIcon class="h-8 text-white" />
+        <button type="submit" class="px-4 ml-2 h-12 text-white bg-red-700" v-on:click="emitQuery()">
+            Search
         </button>
     </div>
 </template>

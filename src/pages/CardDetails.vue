@@ -4,8 +4,8 @@
             <div>
                 <MagicCard :card="card" :customClasses="'h-80 md:h-96'" />
             </div>
-            <div class="col-span-3">
-                <h1 class="text-5xl mb-4">{{card.name}}</h1>
+            <div class="col-span-3 mt-3 md:mt-0">
+                <h1 class="text-5xl mb-4 text-center md:text-left border-b-2 border-red-500 pb-3">{{card.name}}</h1>
                 <p v-if="card.flavor_text">{{card.flavor_text}}</p>
                 <p v-if="card.oracle_text">{{card.oracle_text}}</p>
             </div>

@@ -3,7 +3,7 @@
         <img v-if="card.image_uris"
             :src="card.image_uris.normal"
             @click="goToDetails()"
-            class="rounded-xl"
+            class="rounded-xl shadow-lg hover:shadow-2xl transition-shadow"
             :class="customClasses ? customClasses : ''"
         />
     </div>

@@ -3,6 +3,8 @@ import { Card, ScryfallResponse } from '@/models/magic';
 import axios from 'axios';
 
 const baseUrl: string = 'https://api.scryfall.com/';
+const assetsBaseUrl: string = 'https://c2.scryfall.com/file/scryfall-symbols/card-symbols/';
+
 const MagicService = {
     async search(search: string): Promise<ScryfallResponse[]> {
         const res = await axios.get(baseUrl + 'cards/search?q=' + search);
@@ -26,16 +28,23 @@ const MagicService = {
     },
     async getCardsFromString(name: string): Promise<ScryfallResponse> {
         if (name.length && name.length >= 3) {
-            const res = await axios.get(baseUrl + 'cards/search?order=name&q=' + name);
-            return res.data;
+            try {
+                const res = await axios.get(baseUrl + 'cards/search?order=name&q=' + name);
+                return res.data;
+            } catch (e) {
+                console.log(e);
+            }
         }
         return {
             data: [],
         };
     },
     async autocompleteCardName(name: string): Promise<string[]> {
-        const res = await axios.get('https://api.scryfall.com/cards/autocomplete?q=' + name);
+        const res = await axios.get(baseUrl + 'cards/autocomplete?q=' + name);
         return res.data;
+    },
+    getCardSymbol(name: string) {
+        return assetsBaseUrl + name + '.svg';
     },
 };
 
